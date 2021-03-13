@@ -1,0 +1,87 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Game15.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Game15.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Game15">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Border Background="DarkGreen"
+		 BorderBrush="Lavender"
+		 BorderThickness="10"
+		 CornerRadius="0"
+		 Padding="4">
+
+		<Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" ShowGridLines="True">
+
+			<StackPanel Classes="header" Height="50" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+				<TextBlock Text="Newest game 15" Margin="12" FontStyle="Normal"/>
+			</StackPanel>
+
+			<StackPanel Classes="leftsidemenu" Grid.Column="0" Width="100">
+
+			</StackPanel>
+
+			<StackPanel Classes="maincontent" Grid.Column="1" Grid.Row="1">
+				<!--<TextBlock Width="100" Text="Hello" Grid.Column="1" Grid.Row="1"></TextBlock>-->
+
+				<!--<ListBox Items="{Binding Greeting}"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border Background="Red" CornerRadius="4" Padding="4">
+						<TextBlock Text="{Binding}"/>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>-->
+
+
+				<StackPanel Grid.Column="1" Grid.Row="1" Background="MediumSeaGreen"  Height="210" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="70">
+
+					<Border BorderBrush="Lavender" BorderThickness="5" Grid.Column="1" Grid.Row="1">
+						<Grid ColumnDefinitions="Auto, Auto, Auto,Auto" ShowGridLines="True" Margin="2" >
+							<Grid.RowDefinitions>
+								<RowDefinition  MinHeight="50"/>
+								<RowDefinition  MinHeight="50" />
+								<RowDefinition  MinHeight="50"/>
+								<RowDefinition  MinHeight="50"/>
+							</Grid.RowDefinitions>
+
+							<Button Content="Button1" Grid.Row="0" Grid.Column="0" Height="30" IsVisible="False"></Button>
+							<Button Content="Button1" Grid.Row="0" Grid.Column="1" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="0" Grid.Column="2" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="0" Grid.Column="3" Height="30"></Button>
+
+							<Button Content="Button1" Grid.Row="1" Grid.Column="0" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="1" Grid.Column="1" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="1" Grid.Column="2" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="1" Grid.Column="3" Height="30"></Button>
+
+							<Button Content="Button1" Grid.Row="2" Grid.Column="0" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="2" Grid.Column="1" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="2" Grid.Column="2" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="2" Grid.Column="3" Height="30"></Button>
+
+							<Button Content="Button1" Grid.Row="3" Grid.Column="0" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="3" Grid.Column="1" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="3" Grid.Column="2" Height="30"></Button>
+							<Button Content="Button1" Grid.Row="3" Grid.Column="3" Height="30"></Button>
+						</Grid>
+					</Border>
+				</StackPanel>
+			</StackPanel>
+
+			<StackPanel Classes="rightsidemenu" Grid.Column="2" Width="100">
+
+			</StackPanel>
+
+		</Grid>
+	</Border>
+
+</Window>
