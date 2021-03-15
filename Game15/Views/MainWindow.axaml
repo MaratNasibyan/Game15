@@ -18,10 +18,12 @@
 		CornerRadius="0"
 		Padding="4">
 
-	<Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" ShowGridLines="True">
+	<Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" Margin="40" ShowGridLines="False">
 
-		<StackPanel Classes="header" Height="50" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
-			<TextBlock Text="Newest game 15" Margin="12" FontStyle="Normal"/>
+		<StackPanel Classes="header" Height="90" Grid.Row="0" Grid.Column="1" >
+			<Border Classes="header_border" >
+			  <TextBlock Classes="header_text" Text="15 PUZZLE" />				
+			</Border>
 		</StackPanel>
 
 		<StackPanel Classes="leftsidemenu" Grid.Column="0" Width="100">
@@ -42,8 +44,18 @@
 	</ListBox>-->
 
 
-			<StackPanel Grid.Column="1" Grid.Row="1" Background="MediumSeaGreen"  Height="301" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="70" Width="301">
+			<StackPanel Classes="mini_header" Width="300">
 
+				<Grid ColumnDefinitions="Auto, Auto" ShowGridLines="False" Margin="2" >
+					<TextBlock Text="MOVES"  FontFamily="Comic Sans MS, Verdana" Grid.Column="0"  Width="150"></TextBlock>
+					<TextBlock Text="TIME"  FontFamily="Comic Sans MS, Verdana" Grid.Column="1"></TextBlock>
+				</Grid>
+		
+				<!--<TextBlock Text="Time" HorizontalAlignment="Left" Padding="0,10"></TextBlock>-->
+
+			</StackPanel>
+			<StackPanel Grid.Column="1" Grid.Row="1" Background="MediumSeaGreen"  Height="301" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Width="301">
+				
 				<Border BorderBrush="Lavender" BorderThickness="5" Grid.Column="1" Grid.Row="1" Height="301" Width="301">
 					<Grid ColumnDefinitions="Auto, Auto, Auto,Auto" ShowGridLines="False" Margin="2" >
 						<Grid.RowDefinitions>
@@ -75,9 +87,16 @@
 					</Grid>
 				</Border>
 			</StackPanel>
-		</StackPanel>
 
-		<StackPanel Classes="rightsidemenu" Grid.Column="2" Width="100">
+			<StackPanel Classes="mini_footer" Width="300">
+			<!--<Setter Property="FontFamily" Value="Comic Sans MS, Verdana"></Setter>-->
+				<Button Classes="footer_buttons" Content="START NEW GAME" FontFamily="Comic Sans MS, Verdana"></Button>
+				<Button Content="SAVE" FontFamily="Comic Sans MS, Verdana"></Button>
+
+			</StackPanel>
+	</StackPanel>
+
+		<StackPanel Classes="rightsidemenu" Grid.Column="2" Grid.Row="1">
 
 		</StackPanel>
 
@@ -86,11 +105,36 @@
 
 	<Window.Styles>
 		<Style Selector="Button">
-
 			<Setter Property="Margin" Value="1"></Setter>
 			<Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
 			<Setter Property="VerticalContentAlignment" Value="Center"></Setter>
 		</Style>
-	</Window.Styles>
 
+		<Style Selector="StackPanel.rightsidemenu">
+			<Setter Property="Margin" Value="75"></Setter>
+			<Setter Property="Width" Value="100"></Setter>
+			<Setter Property="Background" Value="Lavender"></Setter>
+			<Setter Property="VerticalAlignment" Value="Top"></Setter>
+		</Style>
+
+		<Style Selector="StackPanel.header">
+			<Setter Property="Width" Value="300"></Setter>	
+		</Style>
+
+		<Style Selector="Border.header_border">
+			<Setter Property="BorderBrush" Value="Lavender"></Setter>
+			<Setter Property="BorderThickness" Value="5"></Setter>
+			<Setter Property="Height" Value="80"></Setter>		
+		</Style>
+
+		<Style Selector="TextBlock.header_text">
+			<Setter Property="Margin" Value="12"></Setter>
+			<Setter Property="FontStyle" Value="Normal"></Setter>
+			<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+			<Setter Property="VerticalAlignment" Value="Center"></Setter>
+			<Setter Property="FontSize" Value="50"></Setter>
+			<Setter Property="Foreground" Value="LavenderBlush"></Setter>
+			<Setter Property="FontFamily" Value="Comic Sans MS, Verdana"></Setter>
+		</Style>	
+	</Window.Styles>
 </Window>
