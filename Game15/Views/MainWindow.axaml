@@ -12,76 +12,85 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-	<Border Background="DarkGreen"
-		 BorderBrush="Lavender"
-		 BorderThickness="10"
-		 CornerRadius="0"
-		 Padding="4">
+<Border Background="DarkGreen"
+		BorderBrush="Lavender"
+		BorderThickness="10"
+		CornerRadius="0"
+		Padding="4">
 
-		<Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" ShowGridLines="True">
+	<Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" ShowGridLines="True">
 
-			<StackPanel Classes="header" Height="50" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
-				<TextBlock Text="Newest game 15" Margin="12" FontStyle="Normal"/>
+		<StackPanel Classes="header" Height="50" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+			<TextBlock Text="Newest game 15" Margin="12" FontStyle="Normal"/>
+		</StackPanel>
+
+		<StackPanel Classes="leftsidemenu" Grid.Column="0" Width="100">
+
+		</StackPanel>
+
+		<StackPanel Classes="maincontent" Grid.Column="1" Grid.Row="1">
+			<!--<TextBlock Width="100" Text="Hello" Grid.Column="1" Grid.Row="1"></TextBlock>-->
+
+			<!--<ListBox Items="{Binding Greeting}"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+		<ListBox.ItemTemplate>
+			<DataTemplate>
+				<Border Background="Red" CornerRadius="4" Padding="4">
+					<TextBlock Text="{Binding}"/>
+				</Border>
+			</DataTemplate>
+		</ListBox.ItemTemplate>
+	</ListBox>-->
+
+
+			<StackPanel Grid.Column="1" Grid.Row="1" Background="MediumSeaGreen"  Height="301" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="70" Width="301">
+
+				<Border BorderBrush="Lavender" BorderThickness="5" Grid.Column="1" Grid.Row="1" Height="301" Width="301">
+					<Grid ColumnDefinitions="Auto, Auto, Auto,Auto" ShowGridLines="False" Margin="2" >
+						<Grid.RowDefinitions>
+							<RowDefinition  MinHeight="50"/>
+							<RowDefinition  MinHeight="50" />
+							<RowDefinition  MinHeight="50"/>
+							<RowDefinition  MinHeight="50"/>
+						</Grid.RowDefinitions>
+
+						<Button Content="" Grid.Row="0" Grid.Column="0" Height="70" Width="70" IsVisible="True" Click="OnButtonClick"  Name="0"></Button>
+						<Button Content="" Grid.Row="0" Grid.Column="1" Height="70" Width="70"  Click="OnButtonClick" Name="1"></Button>
+						<Button Content="" Grid.Row="0" Grid.Column="2" Height="70" Width="70"  Click="OnButtonClick" Name="2"></Button>
+						<Button Content="" Grid.Row="0" Grid.Column="3" Height="70" Width="70"  Click="OnButtonClick" Name="3"></Button>
+						
+						<Button Content="" Grid.Row="1" Grid.Column="0" Height="70" Width="70"  Click="OnButtonClick" Name="4"></Button>
+						<Button Content="" Grid.Row="1" Grid.Column="1" Height="70" Width="70"  Click="OnButtonClick" Name="5"></Button>
+						<Button Content="" Grid.Row="1" Grid.Column="2" Height="70" Width="70"  Click="OnButtonClick" Name="6"></Button>
+						<Button Content="" Grid.Row="1" Grid.Column="3" Height="70" Width="70"  Click="OnButtonClick" Name="7"></Button>
+
+						<Button Content="" Grid.Row="2" Grid.Column="0" Height="70" Width="70"  Click="OnButtonClick" Name="8"></Button>
+						<Button Content="" Grid.Row="2" Grid.Column="1" Height="70" Width="70"  Click="OnButtonClick" Name="9"></Button>
+						<Button Content="" Grid.Row="2" Grid.Column="2" Height="70" Width="70" Click="OnButtonClick" Name="10"></Button>
+						<Button Content="" Grid.Row="2" Grid.Column="3" Height="70" Width="70" Click="OnButtonClick" Name="11"></Button>
+
+						<Button Content="" Grid.Row="3" Grid.Column="0" Height="70" Width="70" Click="OnButtonClick" Name="12"></Button>
+						<Button Content="" Grid.Row="3" Grid.Column="1" Height="70" Width="70"  Click="OnButtonClick" Name="13"></Button>
+						<Button Content="" Grid.Row="3" Grid.Column="2" Height="70" Width="70" Click="OnButtonClick" Name="14"></Button>
+						<Button Content="" Grid.Row="3" Grid.Column="3" Height="70" Width="70" Click="OnButtonClick" Name="15"></Button>
+					</Grid>
+				</Border>
 			</StackPanel>
+		</StackPanel>
 
-			<StackPanel Classes="leftsidemenu" Grid.Column="0" Width="100">
+		<StackPanel Classes="rightsidemenu" Grid.Column="2" Width="100">
 
-			</StackPanel>
+		</StackPanel>
 
-			<StackPanel Classes="maincontent" Grid.Column="1" Grid.Row="1">
-				<!--<TextBlock Width="100" Text="Hello" Grid.Column="1" Grid.Row="1"></TextBlock>-->
+	</Grid>
+</Border>
 
-				<!--<ListBox Items="{Binding Greeting}"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<Border Background="Red" CornerRadius="4" Padding="4">
-						<TextBlock Text="{Binding}"/>
-					</Border>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>-->
+	<Window.Styles>
+		<Style Selector="Button">
 
-
-				<StackPanel Grid.Column="1" Grid.Row="1" Background="MediumSeaGreen"  Height="210" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="70">
-
-					<Border BorderBrush="Lavender" BorderThickness="5" Grid.Column="1" Grid.Row="1">
-						<Grid ColumnDefinitions="Auto, Auto, Auto,Auto" ShowGridLines="True" Margin="2" >
-							<Grid.RowDefinitions>
-								<RowDefinition  MinHeight="50"/>
-								<RowDefinition  MinHeight="50" />
-								<RowDefinition  MinHeight="50"/>
-								<RowDefinition  MinHeight="50"/>
-							</Grid.RowDefinitions>
-
-							<Button Content="Button1" Grid.Row="0" Grid.Column="0" Height="30" IsVisible="True" Click="OnButtonClick"  Name="0"></Button>
-							<Button Content="Button1" Grid.Row="0" Grid.Column="1" Height="30"  Click="OnButtonClick" Name="1"></Button>
-							<Button Content="Button1" Grid.Row="0" Grid.Column="2" Height="30"  Click="OnButtonClick" Name="2"></Button>
-							<Button Content="Button1" Grid.Row="0" Grid.Column="3" Height="30"  Click="OnButtonClick" Name="3"></Button>
-
-							<Button Content="Button1" Grid.Row="1" Grid.Column="0" Height="30"  Click="OnButtonClick" Name="4"></Button>
-							<Button Content="Button1" Grid.Row="1" Grid.Column="1" Height="30"  Click="OnButtonClick" Name="5"></Button>
-							<Button Content="Button1" Grid.Row="1" Grid.Column="2" Height="30"  Click="OnButtonClick" Name="6"></Button>
-							<Button Content="Button1" Grid.Row="1" Grid.Column="3" Height="30"  Click="OnButtonClick" Name="7"></Button>
-
-							<Button Content="Button1" Grid.Row="2" Grid.Column="0" Height="30"  Click="OnButtonClick" Name="8"></Button>
-							<Button Content="Button1" Grid.Row="2" Grid.Column="1" Height="30"  Click="OnButtonClick" Name="9"></Button>
-							<Button Content="Button1" Grid.Row="2" Grid.Column="2" Height="30"  Click="OnButtonClick" Name="10"></Button>
-							<Button Content="Button1" Grid.Row="2" Grid.Column="3" Height="30"  Click="OnButtonClick" Name="11"></Button>
-
-							<Button Content="Button1" Grid.Row="3" Grid.Column="0" Height="30"  Click="OnButtonClick" Name="12"></Button>
-							<Button Content="Button1" Grid.Row="3" Grid.Column="1" Height="30"  Click="OnButtonClick" Name="13"></Button>
-							<Button Content="Button1" Grid.Row="3" Grid.Column="2" Height="30"  Click="OnButtonClick" Name="14"></Button>
-							<Button Content="Button1" Grid.Row="3" Grid.Column="3" Height="30"  Click="OnButtonClick" Name="15"></Button>
-						</Grid>
-					</Border>
-				</StackPanel>
-			</StackPanel>
-
-			<StackPanel Classes="rightsidemenu" Grid.Column="2" Width="100">
-
-			</StackPanel>
-
-		</Grid>
-	</Border>
+			<Setter Property="Margin" Value="1"></Setter>
+			<Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+			<Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+		</Style>
+	</Window.Styles>
 
 </Window>
