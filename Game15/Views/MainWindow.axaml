@@ -3,7 +3,7 @@
         xmlns:vm="using:Game15.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="1000"
         x:Class="Game15.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="Game15">
@@ -46,9 +46,11 @@
 
 			<StackPanel Classes="mini_header" Width="300">
 
-				<Grid ColumnDefinitions="Auto, Auto" ShowGridLines="False" Margin="2" >
-					<TextBlock Text="MOVES"  FontFamily="Comic Sans MS, Verdana" Grid.Column="0"  Width="150"></TextBlock>
-					<TextBlock Text="TIME"  FontFamily="Comic Sans MS, Verdana" Grid.Column="1"></TextBlock>
+				<Grid ColumnDefinitions="Auto, Auto, Auto, Auto" ShowGridLines="False" Margin="2" >
+					<TextBlock Text="MOVES"  FontFamily="Comic Sans MS, Verdana" Grid.Column="0"  Width="70"></TextBlock>
+					<TextBlock Text="Count" Grid.Column="1" Width="100"></TextBlock>
+					<TextBlock Text="TIME"  FontFamily="Comic Sans MS, Verdana" Width="60"  Grid.Column="2">	</TextBlock>			
+					<TextBlock Text="{Binding TimeSpan}" FontFamily="Comic Sans MS, Verdana" Grid.Column="3"></TextBlock>
 				</Grid>
 		
 				<!--<TextBlock Text="Time" HorizontalAlignment="Left" Padding="0,10"></TextBlock>-->
@@ -92,6 +94,8 @@
 			<!--<Setter Property="FontFamily" Value="Comic Sans MS, Verdana"></Setter>-->
 				<Button Classes="footer_buttons" Content="START NEW GAME" FontFamily="Comic Sans MS, Verdana"></Button>
 				<Button Content="SAVE" FontFamily="Comic Sans MS, Verdana"></Button>
+				<Button Content="PAUSE"></Button>		
+
 
 			</StackPanel>
 	</StackPanel>
