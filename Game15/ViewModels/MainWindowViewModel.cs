@@ -1,37 +1,25 @@
 using Avalonia.Threading;
+using Game15.Services;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reactive;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Game15.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
-    {      
-        private int timer = default;
-        private TimeSpan timeSpan;
-
-        public TimeSpan TimeSpan
-        {
-            get => timeSpan;
-            set => this.RaiseAndSetIfChanged(ref timeSpan, value);
-        }
-
-
+    {  
+    
         public MainWindowViewModel()
         {
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
-            dispatcherTimer.Start();
         }
 
-        public void dispatcherTimer_Tick(object? sender, EventArgs e)
-        {
-            TimeSpan = TimeSpan.FromSeconds(timer++);
-        }
 
         private async Task InitializeAsync()
         {           
@@ -44,5 +32,31 @@ namespace Game15.ViewModels
             //await Task.Delay(1000);
             //MyItems = new ObservableCollection<Movie>(data);
         }
+       
+
+        public void StartNewGame()
+        {
+            dispatcherTimer.Start();
+            counter = 0;
+        }        
+
+        #region Timer
+
+        TimeSpan timer;
+        int counter = default;
+        DispatcherTimer dispatcherTimer;
+
+        public TimeSpan Timer
+        {
+            get => timer;
+            set => this.RaiseAndSetIfChanged(ref timer, value);
+        } 
+
+        public void DispatcherTimer_Tick(object? sender, EventArgs e)
+        {
+            Timer = TimeSpan.FromSeconds(counter++);
+        }
+
+        #endregion Timer
     }
 }

@@ -50,7 +50,7 @@
 					<TextBlock Text="MOVES"  FontFamily="Comic Sans MS, Verdana" Grid.Column="0"  Width="70"></TextBlock>
 					<TextBlock Text="Count" Grid.Column="1" Width="100"></TextBlock>
 					<TextBlock Text="TIME"  FontFamily="Comic Sans MS, Verdana" Width="60"  Grid.Column="2">	</TextBlock>			
-					<TextBlock Text="{Binding TimeSpan}" FontFamily="Comic Sans MS, Verdana" Grid.Column="3"></TextBlock>
+					<TextBlock Text="{Binding Timer}" FontFamily="Comic Sans MS, Verdana" Grid.Column="3"></TextBlock>
 				</Grid>
 		
 				<!--<TextBlock Text="Time" HorizontalAlignment="Left" Padding="0,10"></TextBlock>-->
@@ -90,13 +90,10 @@
 				</Border>
 			</StackPanel>
 
-			<StackPanel Classes="mini_footer" Width="300">
-			<!--<Setter Property="FontFamily" Value="Comic Sans MS, Verdana"></Setter>-->
-				<Button Classes="footer_buttons" Content="START NEW GAME" FontFamily="Comic Sans MS, Verdana"></Button>
-				<Button Content="SAVE" FontFamily="Comic Sans MS, Verdana"></Button>
-				<Button Content="PAUSE"></Button>		
-
-
+			<StackPanel Classes="mini_footer" Width="300">			
+				<Button  Classes="footer_buttons" Content="START NEW GAME" FontFamily="Comic Sans MS, Verdana" Command="{Binding StartNewGame}"></Button>
+				<!--<Button Content="{Binding PauseButtonText}" Command="{Binding PauseGame}"></Button>		
+				<Button Content="SAVE" FontFamily="Comic Sans MS, Verdana"></Button>-->
 			</StackPanel>
 	</StackPanel>
 
